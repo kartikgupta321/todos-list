@@ -1,9 +1,12 @@
 import './App.css';
 import Header from "./MyComponents/Header";
 import {Footer} from "./MyComponents/Footer";
-import {Todos}  from "./MyComponents/TodoItem";
+import {Todos}  from "./MyComponents/Todos";
 
 function App() {
+  const onDelete = ()=>{
+    console.log("Deleted")
+  }
   let todos = [
     {
       sno : 1,
@@ -25,7 +28,7 @@ function App() {
   return (
     <>
       <Header title = "My Todos List" searchbar = {true}/>
-      <Todos todos = {todos}/>
+      <Todos todos = {todos} onDelete = {onDelete}/>
       <Footer/>
     </>
   );
